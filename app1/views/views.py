@@ -26,14 +26,14 @@ async def getweather(location):
 def homepage(request):
     print(request.POST)
     try:
-        a = int(request.POST['num1'][0])
-        b = int(request.POST['num2'][0])
+        a = int(request.POST['num1'])
+        b = int(request.POST['num2'])
     except:
         a=b=0
-    location = request.POST.get('location') or ['Tashkent']
+    location = list(request.POST.get('location')) or ['Tashkent']
     print(f'<{location}>')
-    t = asyncio.run(getweather(location[0]))
+    t = asyncio.run(getweather(''.join(location)))
     print(f't = {t}, {type(t)}')
     # # print(request.POST)
-    return render(request, 'app1/index.html',{'a':a,'b':b,'c':a+b,'temp':t,'location':location})
+    return render(request, 'app1/index.html',{'a':a,'b':b,'c':a+b,'temp':t,'location':''.join(location)})
     # return render(request, 'app1/index.html')
