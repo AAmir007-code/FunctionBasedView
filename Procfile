@@ -1,0 +1,1 @@
+web: gunicorn FuncViews.wsgi --log-file -

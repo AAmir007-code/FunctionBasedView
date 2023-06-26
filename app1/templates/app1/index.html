@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    Django 4.2 Form post example:
+    <hr>
+    <form method="post">
+        {% csrf_token %}
+        <label for="location">son-1:</label>
+        <input type="text" name="location" placeholder="Location: " > <br>
+        <label for="num1">son-1:</label>
+        <input type="number" name="num1" placeholder="son kiriting" > <br>
+        <label for="num2">son-2:</label>
+        <input type="number" name="num2" placeholder="son kiriting" > <br>
+        <input type="submit" value="+">
+    </form>
+        <h3>{{a}} + {{b}} = {{ c }}</h3>
+    <hr>
+        <h1>Calling Weather API</h1>
+        <h2>Location: {{location}}</h2>
+        <h2>Temperature: {{temp|floatformat:1}}</h2><br>
+
+</body>
+</html>
